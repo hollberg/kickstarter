@@ -46,7 +46,10 @@ The application uses Flask to power the search query/input. From the user input,
 TBD
 
 ## Team
-
+DAN KOSITZKE()\
+MITCH HOLBERG()\
+OLATOMI ADIGUN ()\
+BIANCA KLUCIK (spectator, suummarizer)
 
 ## License
 
