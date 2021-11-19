@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Kickstarter Campaign Predictor</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="static/style.css">
+	</head>
+	<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Song Prediction -->
+    <section id="campaign_details" class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <img src="static/image1.svg" class="img-fluid" alt="">
+                </div>
+                <div class="col-md p-5">
+                    <h1><span class="text-success">Fill In</span>
+                         Your Kickstarter Details
+                    </h1>
+                    <ul>
+                        <li>Then Get Your Predicted Outcome</li>
+                    </ul>
+                    <form action="/result" method="post">
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="title" id="title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="subtitle" id="subtitle" placeholder="Subtitle">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <label for="selector"> Category
+                                    <!-- Can add label if want -->
+
+                                    <select name="category" id="category">
+                                      <!-- Use "select" to create object -->
+                                      <option value="art">art</option>
+                                      <option value="comics">comics</option>
+                                      <option value="crafts">crafts</option>
+                                      <option value="dance">dance</option>
+                                      <option value="design">design</option>
+                                      <option value="fashion">fashion</option>
+                                      <option value="film video">film video</option>
+                                      <option value="food">food</option>
+                                      <option value="games">games</option>
+                                      <option value="journalism">journalism</option>
+                                      <option value="music">music</option>
+                                      <option value="photography">photography</option>
+                                      <option value="publishing">publishing</option>
+                                      <option value="technology">technology</option>
+                                      <option value="theater">theater</option>
+
+                                    </select>
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <label for="selector"> Subcategory
+                                    <!-- Can add label if want -->
+
+                                    <select name="subcategory" id="subcategory">
+                                      <!-- Use "select" to create object -->
+                                      <optgroup label="Art">
+                                        <!-- To create nested options for categories use "optgroup" -->
+
+                                        <option value="ceramics">ceramics</option>
+                                        <option value="conceptual art">conceptual art</option>
+                                        <option value="digital art">digital art</option>
+                                        <option value="illustration">illustration</option>
+                                        <option value="installations">installations</option>
+                                        <option value="mixed media">mixed media</option>
+                                        <option value="painting">painting</option>
+                                        <option value="performance art">performance art</option>
+                                        <option value="public art">public art</option>
+                                        <option value="sculpture">sculpture</option>
+                                        <option value="social practice">social practice</option>
+                                        <option value="textiles">textiles</option>
+                                        <option value="video art">video art</option>
+                                      <optgroup label="Comics">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="anthogologies">anthologies</option>
+                                        <option value="comic books">comic books</option>
+                                        <option value="events">events</option>
+                                        <option value="graphic novels">graphic novels</option>
+                                        <option value="webcomics">webcomics</option>
+                                      <optgroup label="Crafts">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="candles">candles</option>
+                                        <option value="crochet">crochet</option>
+                                        <option value="diy">diy</option>
+                                        <option value="embroidery">embroidery</option>
+                                        <option value="glass">glass</option>
+
+                                        <option value="knitting">knitting</option>
+                                        <option value="pottery">pottery</option>
+                                        <option value="printing">printing</option>
+                                        <option value="quilts">quilts</option>
+                                        <option value="stationery">stationery</option>
+                                        <option value="taxidermy">taxidermy</option>
+                                        <option value="weaving">weaving</option>
+                                        <option value="woodworking">woodworking</option>
+                                      <optgroup label="Dance">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="performances">performances</option>
+                                        <option value="residencies">residencies</option>
+                                        <option value="spaces">spaces</option>
+                                        <option value="workshops">workshops</option>
+                                      <optgroup label="Design">
+                                        <!-- To create nested options for categories use "optgroup" -->
+
+                                        <option value="architecture">architecture</option>
+                                        <option value="civic design">civic design</option>
+                                        <option value="graphic design">graphic design</option>
+                                        <option value="interactive design">interactive design</option>
+                                        <option value="product design">product design</option>
+                                        <option value="toys">toys</option>
+                                        <option value="typography">typography</option>
+                                      <optgroup label="Fashion">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="accessories">accessories</option>
+                                        <option value="apparel">apparel</option>
+                                        <option value="childrenswear">childrenswear</option>
+                                        <option value="couture">couture</option>
+                                        <option value="footwear">footwear</option>
+                                        <option value="jewelry">jewelry</option>
+                                        <option value="pet fashion">pet fashion</option>
+                                        <option value="ready to wear">ready to wear</option>
+                                      <optgroup label="Film video">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="action">action</option>
+                                        <option value="animation">animation</option>
+                                        <option value="comedy">comedy</option>
+                                        <option value="documentary">documentary</option>
+                                        <option value="experimental">experimental</option>
+                                        <option value="family">family</option>
+                                        <option value="fantasy">fantasy</option>
+                                        <option value="festivals">festivals</option>
+                                        <option value="horror">horror</option>
+                                        <option value="movie theaters">movie theaters</option>
+                                        <option value="narrative film">narrative film</option>
+                                        <option value="romance">romance</option>
+                                        <option value="science fiction">science fiction</option>
+                                        <option value="shorts">shorts</option>
+                                        <option value="television">television</option>
+                                        <option value="thrillers">thrillers</option>
+                                        <option value="webseries">webseries</option>
+                                      <optgroup label="Food">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="bacon">bacon</option>
+                                        <option value="community gardens">community gardens</option>
+                                        <option value="cookbooks">cookbooks</option>
+                                        <option value="drinks">drinks</option>
+                                        <option value="events">events</option>
+                                        <option value="farmers market">farmers market</option>
+                                        <option value="farms">farms</option>
+                                        <option value="food trucks">food trucks</option>
+                                        <option value="restaurants">restaurants</option>
+                                        <option value="small batch">small batch</option>
+                                        <option value="spaces">spaces</option>
+                                        <option value="vegan">vegan</option>
+                                      <optgroup label="Games">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="gaming hardware">gaming hardware</option>
+                                        <option value="live games">live games</option>
+                                        <option value="mobile games">mobile games</option>
+                                        <option value="playing cards">playing cards</option>
+                                        <option value="puzzles">puzzles</option>
+                                        <option value="tabletop games">tabletop games</option>
+                                        <option value="video games">video games</option>
+                                      <optgroup label="Journalism">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="audio">audio</option>
+                                        <option value="photo">photo</option>
+                                        <option value="print">print</option>
+                                        <option value="video">video</option>
+                                        <option value="web">web</option>
+                                      <optgroup label="Music">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="blues">blues</option>
+                                        <option value="chiptune">chiptune</option>
+                                        <option value="classical music">classical music</option>
+                                        <option value="comedy">comedy</option>
+                                        <option value="country folk">country folk</option>
+                                        <option value="electronic music">electronic music</option>
+                                        <option value="faith">faith</option>
+                                        <option value="hip hop">hip hop</option>
+                                        <option value="indie rock">indie rock</option>
+                                        <option value="jazz">jazz</option>
+                                        <option value="kids">kids</option>
+                                        <option value="latin">latin</option>
+                                        <option value="metal">metal</option>
+                                        <option value="pop">pop</option>
+                                        <option value="punk">punk</option>
+                                        <option value="r_b">r_b</option>
+                                        <option value="rock">rock</option>
+                                        <option value="world music">world music</option>
+
+                                      <optgroup label="Photography">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="animals">animals</option>
+                                        <option value="fine art">fine art</option>
+                                        <option value="nature">nature</option>
+                                        <option value="people">people</option>
+                                        <option value="photobooks">photobooks</option>
+                                        <option value="places">places</option>
+
+                                      <optgroup label="Publishing">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="academic">academic</option>
+                                        <option value="anthogologies">anthologies</option>
+                                        <option value="art books">art books</option>
+                                        <option value="calendars">calendars</option>
+                                        <option value="children's books">children's books</option>
+                                        <option value="comedy">comedy</option>
+                                        <option value="fiction">fiction</option>
+                                        <option value="letterpress">letterpress</option>
+                                        <option value="literary journals">literary journals</option>
+                                        <option value="literary spaces">literary spaces</option>
+                                        <option value="nonfiction">nonfiction</option>
+                                        <option value="periodicals">periodicals</option>
+                                        <option value="poetry">poetry</option>
+                                        <option value="radio podcasts">radio podcasts</option>
+                                        <option value="translations">translations</option>
+                                        <option value="young adult">young adult</option>
+                                        <option value="zines">zines</option>
+
+                                      <optgroup label="Technology">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="3d printing">3d printing</option>
+                                        <option value="apps">apps</option>
+                                        <option value="camera equipment">camera equipment</option>
+                                        <option value="diy electronics">diy electronics</option>
+                                        <option value="fabrication tools">fabrication tools</option>
+                                        <option value="flight">flight</option>
+                                        <option value="gadgets">gadgets</option>
+                                        <option value="hardware">hardware</option>
+                                        <option value="makerspaces">makerspaces</option>
+                                        <option value="robots">robots</option>
+                                        <option value="software">software</option>
+                                        <option value="sound">sound</option>
+                                        <option value="space exploration">space exploration</option>
+                                        <option value="wearables">wearables</option>
+
+                                      <optgroup label="Theater">
+                                        <!-- To create nested options for categories use "optgroup" -->
+                                        <option value="comedy">comedy</option>
+                                        <option value="experimental">experimental</option>
+                                        <option value="festivals">festivals</option>
+                                        <option value="immersive">immersive</option>
+                                        <option value="musical">musical</option>
+                                        <option value="plays">plays</option>
+                                        <option value="plays">plays</option>
+
+
+
+
+                                    </select>
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="city" id="city" placeholder="Location City">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="state" id="state" placeholder="Location State">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="country" id="country" placeholder="Location Country">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="campaign_duration" id="campaign_duration" placeholder="Campaign Duration">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="text" name="funding_goal" id="funding_goal" placeholder="Funding Goal">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row align-items-center justify-content-between">
+                                <input type="submit" value="Submit" class="btn btn-success btn-lg mt-3"></input>
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-ralative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2021 Kickstarter Build Week Team</p>
+        </div>
+    </footer>
+
+    </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kickstarter - {{ title }}</title>
+  <link rel="stylesheet" href="https://unpkg.com/picnic" />
+</head>
+
+<body>
+  <nav>
+    <a href="/" class="brand"><span>Kickstarter!</span></a>
+
+
+
+  </nav>
+
+  <article class="flex two" style="padding: 3em 1em;">
+    {% block content %}
+    <div>
+      <h1>{{ title }}</h1>
+      <form action="result" method="post">
+
+        <td width="95"><b>Input your various features below, to get result whether campaign will be successful or
+            not</b></td>
+        <p></p>
+        <label for="selector"> category
+          <!-- Can add label if want -->
+
+          <select name="category" id="selector">
+            <!-- Use "select" to create object -->
+            <option value="art">art</option>
+            <option value="comics">comics</option>
+            <option value="crafts">crafts</option>
+            <option value="dance">dance</option>
+            <option value="design">design</option>
+            <option value="fashion">fashion</option>
+            <option value="film_video">film_video</option>
+            <option value="food">food</option>
+            <option value="games">games</option>
+            <option value="journalism">journalism</option>
+            <option value="music">music</option>
+            <option value="photography">photography</option>
+            <option value="publishing">publishing</option>
+            <option value="technology">technology</option>
+            <option value="theater">theater</option>
+
+          </select>
+        </label>
+        <p></p>
+        <label for="selector"> category
+          <!-- Can add label if want -->
+
+          <select name="subcategory" id="selector">
+            <!-- Use "select" to create object -->
+            <optgroup label="Art">
+              <!-- To create nested options for categories use "optgroup" -->
+
+              <option value="ceramics">ceramics</option>
+              <option value="conceptual art">conceptual_art</option>
+              <option value="digital art">digital_art</option>
+              <option value="illustration">illustration</option>
+              <option value="installations">installations</option>
+              <option value="mixed media">mixed_media</option>
+              <option value="painting">painting</option>
+              <option value="performance_art">performance_art</option>
+              <option value="public art">public_art</option>
+              <option value="sculpture">sculpture</option>
+              <option value="social practice">social_practice</option>
+              <option value="textiles">textiles</option>
+              <option value="video art">video_art</option>
+            <optgroup label="Comics">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="anthogologies">anthologies</option>
+              <option value="comic books">comic_books</option>
+              <option value="events">events</option>
+              <option value="graphic novels">graphic_novels</option>
+              <option value="webcomics">webcomics</option>
+            <optgroup label="Crafts">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="candles">candles</option>
+              <option value="crochet">crochet</option>
+              <option value="diy">diy</option>
+              <option value="embroidery">embroidery</option>
+              <option value="glass">glass</option>
+
+              <option value="knitting">knitting</option>
+              <option value="pottery">pottery</option>
+              <option value="printing">printing</option>
+              <option value="quilts">quilts</option>
+              <option value="stationery">stationery</option>
+              <option value="taxidermy">taxidermy</option>
+              <option value="weaving">weaving</option>
+              <option value="woodworking">woodworking</option>
+            <optgroup label="Dance">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="performances">performances</option>
+              <option value="residencies">residencies</option>
+              <option value="spaces">spaces</option>
+              <option value="workshops">workshops</option>
+            <optgroup label="Design">
+              <!-- To create nested options for categories use "optgroup" -->
+
+              <option value="architecture">architecture</option>
+              <option value="civic design">civic_design</option>
+              <option value="graphic design">graphic_design</option>
+              <option value="interactive design">interactive_design</option>
+              <option value="product design">product_design</option>
+              <option value="toys">toys</option>
+              <option value="typography">typography</option>
+            <optgroup label="Fashion">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="accessories">accessories</option>
+              <option value="apparel">apparel</option>
+              <option value="childrenswear">childrenswear</option>
+              <option value="couture">couture</option>
+              <option value="footwear">footwear</option>
+              <option value="jewelry">jewelry</option>
+              <option value="pet fashion">pet_fashion</option>
+              <option value="ready-to-wear">ready_to_wear</option>
+            <optgroup label="Film video">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="action">action</option>
+              <option value="animation">animation</option>
+              <option value="comedy">comedy</option>
+              <option value="documentary">documentary</option>
+              <option value="experimental">experimental</option>
+              <option value="family">family</option>
+              <option value="fantasy">fantasy</option>
+              <option value="festivals">festivals</option>
+              <option value="horror">horror</option>
+              <option value="movie theaters">movie_theaters</option>
+              <option value="narrative film">narrative_film</option>
+              <option value="romance">romance</option>
+              <option value="science_fiction">science_fiction</option>
+              <option value="shorts">shorts</option>
+              <option value="television">television</option>
+              <option value="thrillers">thrillers</option>
+              <option value="webseries">webseries</option>
+            <optgroup label="Food">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="bacon">bacon</option>
+              <option value="community gardens">community_gardens</option>
+              <option value="cookbooks">cookbooks</option>
+              <option value="drinks">drinks</option>
+              <option value="events">events</option>
+              <option value="farmers market">farmers_market</option>
+              <option value="farms">farms</option>
+              <option value="food trucks">food_trucks</option>
+              <option value="restaurants">restaurants</option>
+              <option value="small batch">small_batch</option>
+              <option value="spaces">spaces</option>
+              <option value="vegan">vegan</option>
+            <optgroup label="Games">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="gaming hardware">gaming_hardware</option>
+              <option value="live games">live_games</option>
+              <option value="mobile games">mobile_games</option>
+              <option value="playing cards">playing_cards</option>
+              <option value="puzzles">puzzles</option>
+              <option value="tabletop games">tabletop_games</option>
+              <option value="video games">video_games</option>
+            <optgroup label="Journalism">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="audio">audio</option>
+              <option value="photo">photo</option>
+              <option value="print">print</option>
+              <option value="video">video</option>
+              <option value="web">web</option>
+            <optgroup label="Music">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="blues">blues</option>
+              <option value="chiptune">chiptune</option>
+              <option value="classical music">classical_music</option>
+              <option value="comedy">comedy</option>
+              <option value="country folk">country_folk</option>
+              <option value="electronic music">electronic_music</option>
+              <option value="faith">faith</option>
+              <option value="hip hop">hip_hop</option>
+              <option value="indie rock">indie_rock</option>
+              <option value="jazz">jazz</option>
+              <option value="kids">kids</option>
+              <option value="latin">latin</option>
+              <option value="metal">metal</option>
+              <option value="pop">pop</option>
+              <option value="punk">punk</option>
+              <option value="r&b">r_b</option>
+              <option value="rock">rock</option>
+              <option value="world music">world_music</option>
+
+            <optgroup label="Photography">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="animals">animals</option>
+              <option value="fine art">fine_art</option>
+              <option value="nature">nature</option>
+              <option value="people">people</option>
+              <option value="photobooks">photobooks</option>
+              <option value="places">places</option>
+
+            <optgroup label="Publishing">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="academic">academic</option>
+              <option value="anthogologies">anthologies</option>
+              <option value="art books">art_books</option>
+              <option value="calendars">calendars</option>
+              <option value="children's books">children's_books</option>
+              <option value="comedy">comedy</option>
+              <option value="fiction">fiction</option>
+              <option value="letterpress">letterpress</option>
+              <option value="literary journals">literary_journals</option>
+              <option value="literary spaces">literary_spaces</option>
+              <option value="nonfiction">nonfiction</option>
+              <option value="periodicals">periodicals</option>
+              <option value="poetry">poetry</option>
+              <option value="radio podcasts">radio_podcasts</option>
+              <option value="translations">translations</option>
+              <option value="young adult">young_adult</option>
+              <option value="zines">zines</option>
+
+            <optgroup label="Technology">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="3d printing">3d_printing</option>
+              <option value="apps">apps</option>
+              <option value="camera equipment">camera_equipment</option>
+              <option value="diy electronics">diy_electronics</option>
+              <option value="fabrication tools">fabrication_tools</option>
+              <option value="flight">flight</option>
+              <option value="gadgets">gadgets</option>
+              <option value="hardware">hardware</option>
+              <option value="makerspaces">makerspaces</option>
+              <option value="robots">robots</option>
+              <option value="software">software</option>
+              <option value="sound">sound</option>
+              <option value="space exploration">space_exploration</option>
+              <option value="wearables">wearables</option>
+
+            <optgroup label="Theater">
+              <!-- To create nested options for categories use "optgroup" -->
+              <option value="comedy">comedy</option>
+              <option value="experimental">experimental</option>
+              <option value="festivals">festivals</option>
+              <option value="immersive">immersive</option>
+              <option value="musical">musical</option>
+              <option value="plays">plays</option>
+              <option value="plays">plays</option>
+
+
+
+
+          </select>
+        </label>
+
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="subtitle" placeholder="Subtitle">
+        <input type="text" name="latitude" placeholder="Latitude">
+        <input type="text" name="longitude" placeholder="Longitude">
+        <input type="text" name="campaign_duration" placeholder="Campaign Duration">
+        <input type="text" name="funding_goal" placeholder="Funding Goal">
+
+        <input type="submit" value="Get Result">
+      </form>
+    </div>
+
+    {% endblock %}
+  </article>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/umbrellajs"/> -->
+</body>
+
+</html>
