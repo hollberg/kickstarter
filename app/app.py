@@ -11,7 +11,7 @@ from .models_2 import DB, process_record, get_lat_value, get_lng_value
 #     from model_prep import process_record
 from os import getenv
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
 
 
