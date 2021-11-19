@@ -4,10 +4,11 @@ Lambda School - DS UNIT 4 Build Week Project
 
 This application predicts the likelihood of whether or not a kickstarter campaign will achieve its funding goals based on the input of the customer. There are many factors that can contribute to the likelihood of success for a campaign. For this experiment in soothsaying, though, we kept our scope at the user defined inputs and how they can affect the outcome of their campaign. 
 
+Try it for yourself [here](https://ft-kickstarter-2.herokuapp.com/)! 
+
 ## Build Status
 
 Currently in development.
-![image]
 
 
 ## Interface
@@ -53,7 +54,7 @@ TBD
 DAN KOSITZKE()\
 MITCH HOLBERG()\
 OLATOMI ADIGUN ()\
-BIANCA KLUCIK (spectator, suummarizer)
+BIANCA KLUCIK (spectator, summarizer)
 
 ## License
 
