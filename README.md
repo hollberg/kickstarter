@@ -7,14 +7,18 @@ This application predicts the likelihood of whether or not a kickstarter campaig
 ## Build Status
 
 Currently in development.
+![image]
+
 
 ## Interface
 
 Follow this link to see it in action:
-
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/86363828/142648688-54ee8d20-42c5-4be5-82a3-b6057f8de142.png)](https://youtu.be/Qt-t43e7TZ0)
 
 #### Landing Page
 
+Users input their specific data: 
+![image](https://user-images.githubusercontent.com/86363828/142648047-5bc69d48-4297-4563-8281-bcb4e4048a9f.png)
 
 
 #### Results
